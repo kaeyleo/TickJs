@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countDown</title>
+</head>
+<body>
+    <h2>倒计时</h2>
+    <div id="timer"></div>
+    <!--<script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>-->
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/countDown.js"></script>
+    <script>
+        $(function() {
+
+            var formatDate = function (date) {  
+                var y = date.getFullYear();  
+                var m = date.getMonth() + 1;  
+                m = m < 10 ? '0' + m : m; 
+                var d = date.getDate();  
+                d = d < 10 ? ('0' + d) : d;
+                var h = date.getHours();
+                h = h < 10 ? ('0' + h) : h;
+
+                var min = date.getMinutes();
+                if(min<60) {min += 1;}
+                min = min < 10 ? ('0' + min) : min;
+                
+                var sec = date.getTime()%60000;
+                sec= (sec - (sec % 1000)) / 1000;
+                sec = sec < 10 ? ('0' + sec) : sec;
+
+                return y + '-' + m + '-' + d + ' ' + h + ':' + min + ':' + sec + ':00';  
+            };
+
+            var targetTime = formatDate(new Date());
+
+            // start countdown! targetTime: 2017-03-16 02:00:00
+            $('#timer').countDown(targetTime, 'Time\'s up!');
+        });
+
+    </script>
+</body>
+</html>
