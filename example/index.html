@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>countDown</title>
+    <title>Tick.js</title>
+    <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-    <h2>倒计时</h2>
-    <div id="timer"></div>
+    <main>
+        <h1 class="title">Tick.js</h1>
+        <p class="desc">a countdown plugin for jQuery/Zepto</p>
+        <div class="box">
+            <span class="timer" id="timer"></span>
+        </div>
+        <div class="author">© 2017 <a href="">Steve Liao</a></div>
+    </main>
     <!--<script src="http://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>-->
     <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/countDown.js"></script>
+    <script src="js/tick.js"></script>
     <script>
+        
         $(function() {
 
             var formatDate = function (date) {  
